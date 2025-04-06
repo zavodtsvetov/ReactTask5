@@ -1,0 +1,19 @@
+* {
+  background-color: mediumspringgreen;
+}
+.header {
+  display: grid;
+  justify-content: center;
+  font-size: 55px;
+  font-family: monospace;
+}
+
+.buttonShowAll {
+  display: flex;
+  margin: auto;
+  border: none;
+  background-color: aliceblue;
+}
+.buttonShowAll:hover {
+  color: brown;
+}
