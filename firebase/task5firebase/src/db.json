@@ -1,0 +1,22 @@
+{
+  "todos": [
+    {
+      "userId": 1,
+      "title": "Забыл",
+      "completed": false,
+      "id": 1
+    },
+    {
+      "userId": 1,
+      "id": 2,
+      "title": "Спорт",
+      "completed": false
+    },
+    {
+      "userId": 1,
+      "id": 3,
+      "title": "Гулять",
+      "completed": false
+    }
+  ]
+}
