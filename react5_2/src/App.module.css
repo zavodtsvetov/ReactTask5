@@ -1,5 +1,5 @@
 * {
-  background-color: mediumspringgreen;
+  background-color: rgb(130, 170, 255);
 }
 .header {
   display: grid;
@@ -11,9 +11,35 @@
 .buttonShowAll {
   display: flex;
   margin: auto;
+  justify-content: center;
   border: none;
   background-color: aliceblue;
+  width: 200px;
+  height: 30px;
 }
 .buttonShowAll:hover {
-  color: brown;
+  width: 300px;
+  background-color: darkmagenta;
+  font-size: 20px;
+  color: wheat;
+}
+
+.sortedButton {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  border: none;
+  background-color: aliceblue;
+  width: 200px;
+  height: 30px;
+}
+
+.inputTask {
+  border: none;
+  width: 100px;
+}
+.inputTask::placeholder {
+  color: rgb(197, 225, 249);
+  text-decoration: underline;
+  text-decoration-color: rgb(197, 225, 249);
 }
