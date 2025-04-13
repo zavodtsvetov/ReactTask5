@@ -13,26 +13,26 @@
   margin: auto;
   justify-content: center;
   border: none;
-  background-color: aliceblue;
+  background-color: rgb(156, 188, 216);
   width: 200px;
   height: 30px;
 }
 .buttonShowAll:hover {
   width: 300px;
-  background-color: darkmagenta;
+  background-color: rgb(241, 160, 241);
   font-size: 20px;
   color: wheat;
 }
 
-.sortedButton {
+/* .sortedButton {
   display: flex;
   margin: auto;
   justify-content: center;
   border: none;
-  background-color: aliceblue;
+  background-color: rgb(69, 129, 181);
   width: 200px;
   height: 30px;
-}
+} */
 
 .inputTask {
   border: none;

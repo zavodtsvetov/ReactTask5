@@ -1,13 +1,10 @@
-export const useAdd = (onClick) => {
-  fetch("http://localhost:3015/todos", {
-    method: "POST",
-    headers: { "Content-Type": "application/json;charset=utf-8" },
-    body: JSON.stringify({
-      userId: "3",
-      title: "Кодить",
-      completed: false,
-    }),
-  })
-    .then((rawResp) => rawResp.json())
-    .then(() => onClick());
+import { ref, push } from "firebase/database";
+import { db } from "../firebase";
+export const useAdd = () => {
+  const todosDBRef = ref(db, "todos");
+  push(todosDBRef, {
+    userId: "4",
+    title: "Кодить",
+    completed: false,
+  });
 };
