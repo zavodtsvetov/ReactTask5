@@ -1,4 +1,6 @@
 import s from "./App.module.css";
+import { ref, onValue } from "firebase/database";
+import { db } from "./firebase";
 import { useState, useEffect, useRef } from "react";
 import { useChangeTitle, useAdd, deleteTask } from "./hooks/index";
 function App() {
@@ -13,12 +15,12 @@ function App() {
   };
 
   useEffect(() => {
-    fetch("http://localhost:3015/todos")
-      .then((res) => res.json())
-      .then((loadedData) => {
-        setToDoList(loadedData);
-      });
-  }, [isClicked]);
+    const todosDBRef = ref(db, "todos");
+    return onValue(todosDBRef, (snapshot) => {
+      const loadedTodos = snapshot.val() || [];
+      setToDoList(loadedTodos);
+    });
+  });
 
   const useAddTask = () => {
     useAdd(onClick);
@@ -52,21 +54,17 @@ function App() {
     }
   };
 
-  const sorted = [...toDoList];
+  // const sorted = toDoList;
   const onHandleSort = () => {
-    sorted.sort((a, b) => (a.title > b.title ? 1 : -1));
-    setToDoList(sorted);
-    setIsSorted(true);
+    // sorted.sort((a, b) => (a.title > b.title ? 1 : -1));
+    // setToDoList(sorted);
+    // setIsSorted(true);
   };
 
   return (
     <>
-      <div className={s.header}>TODOLIST 2.0</div>
-      <p>
-        with{" "}
-        <span style={{ textDecoration: "line-through" }}>JASON STATHAM</span>{" "}
-        JSON SERVER
-      </p>
+      <div className={s.header}>TODOLIST with FireBase</div>
+
       <form onSubmit={onSubmit}>
         <input
           className={s.inputTask}
@@ -106,11 +104,12 @@ function App() {
         {isSorted ? "Отсортировано" : "Сортировать по алфавиту"}
       </button>
 
-      <h5>Второе задание.</h5>
+      <h5>Третий список дел: </h5>
 
-      {toDoList.map(({ id, title }) => (
+      {Object.entries(toDoList).map(([id, { title }]) => (
         <div key={id}>
-          {id}. {title}
+          {" "}
+          {id}.{title}
         </div>
       ))}
     </>

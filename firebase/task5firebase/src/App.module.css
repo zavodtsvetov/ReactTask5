@@ -1,5 +1,5 @@
 * {
-  background-color: rgb(130, 170, 255);
+  background-color: rgb(111, 230, 251);
 }
 .header {
   display: grid;
@@ -39,7 +39,7 @@
   width: 100px;
 }
 .inputTask::placeholder {
-  color: rgb(197, 225, 249);
+  color: rgb(100, 173, 238);
   text-decoration: underline;
-  text-decoration-color: rgb(197, 225, 249);
+  text-decoration-color: rgb(66, 164, 250);
 }

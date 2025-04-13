@@ -1,22 +1,23 @@
 {
-  "todos": [
+  "todos": {
+    "1" :
     {
       "userId": 1,
-      "title": "Забыл",
-      "completed": false,
-      "id": 1
+      "title": "Лениться",
+      "completed": false
+    
     },
+    "2":
     {
       "userId": 1,
-      "id": 2,
-      "title": "Спорт",
+      "title": "Прокрастинировать",
       "completed": false
     },
+    "3" :
     {
       "userId": 1,
-      "id": 3,
-      "title": "Гулять",
+      "title": "Лежать",
       "completed": false
     }
-  ]
+  }
 }
